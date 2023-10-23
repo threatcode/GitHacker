@@ -27,13 +27,13 @@ It's highly recommended that you SHOULD run this tool under a disposable jailed 
 
 ```bash
 # print help info
-docker run wangyihang/githacker --help
+docker run threatcode/githacker --help
 # quick start
-docker run -v $(pwd)/results:/tmp/githacker/results wangyihang/githacker --output-folder /tmp/githacker/results --url http://127.0.0.1/.git/
+docker run -v $(pwd)/results:/tmp/githacker/results threatcode/githacker --output-folder /tmp/githacker/results --url http://127.0.0.1/.git/
 # brute for the name of branchs / tags
-docker run -v $(pwd)/results:/tmp/githacker/results wangyihang/githacker --brute --output-folder /tmp/githacker/results --url http://127.0.0.1/.git/
+docker run -v $(pwd)/results:/tmp/githacker/results threatcode/githacker --brute --output-folder /tmp/githacker/results --url http://127.0.0.1/.git/
 # exploit multiple websites, one site per line
-docker run -v $(pwd)/results:/tmp/githacker/results wangyihang/githacker --brute --output-folder /tmp/githacker/results --url-file websites.txt 
+docker run -v $(pwd)/results:/tmp/githacker/results threatcode/githacker --brute --output-folder /tmp/githacker/results --url-file websites.txt 
 ```
 
 ## Usage
@@ -84,7 +84,7 @@ githacker --brute --url-file websites.txt --output-folder result
 - [x] Use python f'string in `test.py`
 - [x] Download tags and branches when Index enabled
 - [x] Try common tags and branches when Index disabled
-- [x] [find packed refs](https://github.com/WangYihang/GitHacker/issues/1#issuecomment-487135667)
+- [x] [find packed refs](https://github.com/ThreatCode/GitHacker/issues/1#issuecomment-487135667)
 
 ## Test
 
@@ -96,7 +96,7 @@ apt install docker-desktop
 apt install docker-compose
 
 # Download GitHacker
-git clone https://github.com/WangYihang/GitHacker
+git clone https://github.com/ThreatCode/GitHacker
 cd GitHacker
 python -m venv venv
 source venv/bin/activate
@@ -135,15 +135,15 @@ See `test/report/YYYY-MM-DD/index.html`
 
 ## Security Issues
 
-#### 2021-08-01 [Fixed](https://github.com/WangYihang/GitHacker/commit/e105b5c04329e9c4b8080029976bc73d12b1f23f): Malicious .git folder maybe harmful to the user of this tool (Reported by [Driver Tom](https://drivertom.blogspot.com))
+#### 2021-08-01 [Fixed](https://github.com/ThreatCode/GitHacker/commit/e105b5c04329e9c4b8080029976bc73d12b1f23f): Malicious .git folder maybe harmful to the user of this tool (Reported by [Driver Tom](https://drivertom.blogspot.com))
 
 * [别想偷我源码：通用的针对源码泄露利用程序的反制（常见工具集体沦陷）](https://drivertom.blogspot.com/2021/08/git.html)
 
-#### 2022-03-01 [Fixed](https://github.com/WangYihang/GitHacker/commit/806095e807d20e06d5f192928f1f525510a34688): Arbitrary file write via recursive file downloader (Reported by [Justin Steven](https://twitter.com/justinsteven))
+#### 2022-03-01 [Fixed](https://github.com/ThreatCode/GitHacker/commit/806095e807d20e06d5f192928f1f525510a34688): Arbitrary file write via recursive file downloader (Reported by [Justin Steven](https://twitter.com/justinsteven))
 
 * To be released
 
-#### 2022-03-01 [Fixed](https://github.com/WangYihang/GitHacker/commit/f97710c2cf0351308fc81666448e00004b7d14f9): Remote Code Execution via malicious `.git/config` and `.git/hooks/*` files (Reported by [Justin Steven](https://twitter.com/justinsteven))
+#### 2022-03-01 [Fixed](https://github.com/ThreatCode/GitHacker/commit/f97710c2cf0351308fc81666448e00004b7d14f9): Remote Code Execution via malicious `.git/config` and `.git/hooks/*` files (Reported by [Justin Steven](https://twitter.com/justinsteven))
 
 * To be released
 
@@ -164,7 +164,7 @@ See `test/report/YYYY-MM-DD/index.html`
 ```
 THE DRINKWARE LICENSE
 
-<wangyihanger@gmail.com> wrote this file. As long as 
+<threatcodeer@gmail.com> wrote this file. As long as 
 you retain this :x:tice you can do whatever you want 
 with this stuff. If we meet some day, and you think 
 this stuff is worth it, you can buy me the following
