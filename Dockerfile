@@ -1,9 +1,7 @@
 # syntax=docker/dockerfile:1
 
 FROM python:3.13.0a5-alpine AS builder
-RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
-RUN apk update
-RUN apk add git
+RUN apt-get update & apt-get upgrade
 WORKDIR /app
 RUN git clone https://github.com/threatcode/GitHacker.git
 RUN cd GitHacker && pip install -r requirements.txt && python setup.py sdist bdist_wheel
